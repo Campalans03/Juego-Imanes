@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     private float moveInput;
 
     private Animator animator;
+
+    private bool repel=false;
     
     void Start()
     {
@@ -33,14 +35,18 @@ public class PlayerMovement : MonoBehaviour
             transform.eulerAngles = new Vector3(0,180,0);
         }
 
-        if(Input.GetKeyDown(KeyCode.Z))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
             Repel();
+            
         }
     }
 
     void Repel()
     {
+        repel=!repel;
+        animator.SetBool("repeler", repel);
+        //GameObject blueMagnet = Instantiate(BulletPrefab, transform.position + direction * 0.1f,Quaternion.identity);
         Debug.Log("repel");
     }
 }
