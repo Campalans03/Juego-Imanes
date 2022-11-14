@@ -32,5 +32,15 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.eulerAngles = new Vector3(0,180,0);
         }
+
+        if(Input.GetKeyDown(KeyCode.Z))
+        {
+            Repel();
+        }
+    }
+
+    void Repel()
+    {
+        Debug.Log("repel");
     }
 }
