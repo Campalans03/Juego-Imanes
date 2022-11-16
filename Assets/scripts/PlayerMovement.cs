@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
             transform.eulerAngles = new Vector3(0,180,0);
         }
 
+        Physics2D.Raycast(transform.position,Vector3.up,0.1f);
         if(Input.GetKeyDown(KeyCode.Space))
         {
             Repel();
